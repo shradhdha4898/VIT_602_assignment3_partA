@@ -4,7 +4,10 @@
 
 **Module:** ICT602 Software Design and Implementation.
 
-**Date:** 12 Nov 2025
+**Date:** 16 Nov 2025
+
+**Group Member ID's:** Shraddha Neel Diyora(65430), Yashvi Viradiya (65422), Sneh Vijaybhai Bhikadiya  (66186), Hiren Kanubhai (65564)
+
 --------------------------------------------------------
 **PROJECT DESCRIPTION**
 --------------------------------------------------------
@@ -13,9 +16,28 @@ SHAMS is a Java-based desktop-based healthcare scheduling system.
 It enables users to create, reschedule, cancel, and manage doctor appointments
 through both a Command-Line Interface (CLI) and a Graphical User Interface (GUI).
 
-The system will have a reminder-notification module that will automatically.
-appointment reminders are sent out by queues and dispatches.
+- Book appointments  
+- Reschedule appointments  
+- Cancel bookings  
+- View next-day appointments  
+- See automatic reminder notifications 
 
+--------------------------------------------------------
+**REQUIREMENTS**
+--------------------------------------------------------
+### ✔️ Java Installed  
+You need **Java JDK 20 or newer**.  
+Check version:  
+```
+java -version
+```
+
+### ✔️ Maven Installed  
+Required version: **Apache Maven 3.9+**  
+Check version:  
+```
+mvn -version
+```
 
 --------------------------------------------------------
 **TECHNOLOGY STACK**
@@ -34,78 +56,29 @@ Dependencies: Maven -managed through pom.xml.
 
 
 --------------------------------------------------------
-**PROJECT STRUCTURE**
---------------------------------------------------------
-src/main/java/au/vit/shams/
- ├─ domain/       → Appointment, Doctor, Patient, TimeSlot, AppointmentRequest
- ├─ repository/   → AppointmentRepository, DoctorRepository, InMemory implementations
- ├─ service/      → SchedulingService, NotificationService
- ├─ util/         → CsvDataLoader
- └─ gui/          → ShamsGui (UI) and GuiApp (entry point)
-data/             → doctors.csv, patients.csv, appointments.csv
-Run-GUI.bat
-pom.xml
-
-
---------------------------------------------------------
 **HOW TO BUILD AND RUN**
 --------------------------------------------------------
 
-**Option 1 – Using Maven**
+### 🟢 Option 1: Recommended – Use the Batch File  
+1. Open the folder **shams_with_gui_full_package**  
+2. Double-click **Run-GUI.bat**  
+3. If Windows shows a SmartScreen warning, click **“Run Anyway”**  
+4. SHAMS GUI will open automatically  
 
-1\. Elevated Command Prompt in this folder.
+---
 
-2\. Run the following commands:
-
-Commands:
+### 🟠 Option 2: Run Manually Through Command Line
+```
 mvn clean package
+java -cp target/shams-1.0.0.jar au.vit.shams.gui.GuiApp
+```
 
-The command to run the project would be, java -cp target/shams-1.0.0.jar au.vit.shams.gui.GuiApp
-
-
-(This starts Swing GUI version)
-
-**Option 2 – Using the Batch File**
-
-1\. Double-click Run-GUI.bat
-
-2\. In case Windows SmartScreen displays a warning, it should be clicked “Run Anyway.”
-
-3\. Wait until the SHAMS GUI window is open.
-
-Auto-Loaded Sample Data
-
-At startup, SHAMS automatically loads sample data from:
-
-/data/doctors.csv
-/data/patients.csv
-/data/appointments.csv
-
-
-**Option 3 - CLI Version (Optional)**
-
-java -cp target/shams-1.0.0.jar au.vit.shams.Main
-
-
---------------------------------------------------------
-**TESTING**
---------------------------------------------------------
-Execution of unit and integration tests:
-
- mvn test
-
-The result of the tests of JUnit 5 are displayed in the console and are saved as:
-target/surefire-reports/
-
---------------------------------------------------------
-**Run Instructions**
---------------------------------------------------------
-1. mvn clean package
-
-2. java -cp target/shams-1.0.0.jar au.vit.shams.GuiApp
-   OR double-click Run-GUI.bat
-
-
+## 📂 Auto-Loaded Demo Data
+Sample CSVs loaded automatically:
+```
+data/doctors.csv
+data/patients.csv
+data/appointments.csv
 
 --------------------------------------------------------
 **GUI DEMONSTRATION STEPS**
@@ -234,6 +207,10 @@ Expected Result:
 If any appointments exist for tomorrow, they’ll be listed. Otherwise:
 
 No appointments for D1 on 2025-11-11
+
+----------------------------------------------------
+## ✔️ SHAMS Ready to Run
+For any issues, ensure Java & Maven are installed correctly.
 
 --------------------------------------------------------
 **KNOWN LIMITATIONS**
